@@ -11,4 +11,9 @@ module.exports = {
     Accueil : (req, res) => {
             res.render("./accueil");
     },
+
+    // Redirection vers l'inscription
+    Inscription : (req, res) => {
+        res.render("./inscription");
+    },
 }
