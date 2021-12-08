@@ -5,21 +5,21 @@
 
 <div class="card">
 
-<form >
+<form action="/register" method="post">
 
     <div class="row g-3 align-items-center">
     <div class="col-auto">
       <label for="email" class="form-label">Email</label>
       </div>
       <div class="col-auto">
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
       </div>
 
     <div class="col-auto">
       <label for="mdp" class="form-label">Password</label>
         </div>
       <div class="col-auto">
-      <input type="password" class="form-control" id="mdp">
+      <input type="password" class="form-control" id="mdp" name="mdp">
       </div>
       </div>
    
@@ -28,28 +28,28 @@
         <label for="nom" class="form-label">Nom</label>
         </div>
         <div class="col-auto">
-        <input type="text" class="form-control" id="nom">
+        <input type="text" class="form-control" id="nom" name="nom">
       </div>
 
       <div class="col-auto">
         <label for="prenom" class="form-label">Prénom</label>
         </div>
         <div class="col-auto">
-        <input type="text" class="form-control" id="prenom">
+        <input type="text" class="form-control" id="prenom" name="prenom">
     </div>
 
     <div class="col-auto">
         <label for="date_nais" class="form-label">Date de naissance</label>
         </div>
         <div class="col-auto">
-        <input type="date" class="form-control" id="date_nais">
+        <input type="date" class="form-control" id="date_nais" name="date_nais">
     </div>
 
     <div class="col-auto">
         <label for="tel" class="form-label">Télephone</label>
         </div>
         <div class="col-auto">
-        <input type="tel" class="form-control" id="tel">
+        <input type="tel" class="form-control" id="tel" name="tel">
         </div>
     </div>
 
@@ -58,14 +58,14 @@
         <label for="adresse" class="form-label">Adresse</label>
         </div>
         <div class="col-auto">
-        <input type="text" class="form-control" id="adresse">
+        <input type="text" class="form-control" id="adresse" name="adresse">
       </div>
 
       <div class="col-auto">
         <label for="ville" class="form-label">Ville</label>
         </div>
         <div class="col-auto">
-        <input type="text" class="form-control" id="ville">
+        <input type="text" class="form-control" id="ville" name="ville">
       </div>
     </div>
 
