@@ -1,6 +1,27 @@
 <%- include('header'); -%>
+<link rel="stylesheet" href="css/authentification/connexion.css">
 
-<p>Connexion</p>
+<h1>Connexion</h1>
+
+<div class="card">
+
+<form >
+
+    <div class="mb-1">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-1">
+      <label for="mdp" class="form-label">Password</label>
+      <input type="password" class="form-control" id="mdp">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+
+</form>
+<p class="prop_insc">Pas encore de compte ? <a href="/inscription"> Inscrivez-vous </a>!</p>
+</div>
 
 <%- include('footer'); -%>
     
