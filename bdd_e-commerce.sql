@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 08 déc. 2021 à 09:46
+-- Généré le : mer. 08 déc. 2021 à 17:44
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `Cli_Mail` varchar(150) NOT NULL,
   `Cli_Mdp` varchar(150) NOT NULL,
   `Cli_Age` int(10) NOT NULL,
+  `Cli_Tel` varchar(20) NOT NULL,
   `Cli_Adresse` varchar(200) NOT NULL,
   `Cli_Ville` varchar(150) NOT NULL,
   `Cli_Droit` int(10) NOT NULL,
