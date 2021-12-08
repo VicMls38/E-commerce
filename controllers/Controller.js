@@ -12,12 +12,4 @@ module.exports = {
             res.render("./accueil");
     },
 
-    // Redirection vers l'inscription
-    Inscription : (req, res) => {
-        res.render("./inscription");
-    },
-
-    Connexion : (req, res) => {
-        res.render("./connexion");
-    },
 }
