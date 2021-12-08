@@ -1,6 +1,85 @@
 <%- include('header'); -%>
+<link rel="stylesheet" href="css/inscription/inscription.css">
 
-<p>Inscription</p>
+<h1>Inscription</h1>
+
+<div class="card">
+
+<form >
+
+    <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="email" class="form-label">Email</label>
+      </div>
+      <div class="col-auto">
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+      </div>
+
+    <div class="col-auto">
+      <label for="mdp" class="form-label">Password</label>
+        </div>
+      <div class="col-auto">
+      <input type="password" class="form-control" id="mdp">
+      </div>
+      </div>
+   
+    <div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label for="nom" class="form-label">Nom</label>
+        </div>
+        <div class="col-auto">
+        <input type="text" class="form-control" id="nom">
+      </div>
+
+      <div class="col-auto">
+        <label for="prenom" class="form-label">Prénom</label>
+        </div>
+        <div class="col-auto">
+        <input type="text" class="form-control" id="prenom">
+    </div>
+
+    <div class="col-auto">
+        <label for="date_nais" class="form-label">Date de naissance</label>
+        </div>
+        <div class="col-auto">
+        <input type="date" class="form-control" id="date_nais">
+    </div>
+
+    <div class="col-auto">
+        <label for="tel" class="form-label">Télephone</label>
+        </div>
+        <div class="col-auto">
+        <input type="tel" class="form-control" id="tel">
+        </div>
+    </div>
+
+    <div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label for="adresse" class="form-label">Adresse</label>
+        </div>
+        <div class="col-auto">
+        <input type="text" class="form-control" id="adresse">
+      </div>
+
+      <div class="col-auto">
+        <label for="ville" class="form-label">Ville</label>
+        </div>
+        <div class="col-auto">
+        <input type="text" class="form-control" id="ville">
+      </div>
+    </div>
+
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="check">
+      <label class="form-check-label" for="check">J'accepte avoir pris connaissance des<br> conditions générales d'utilisation !</label>
+    </div>
+   
+
+    <button type="submit" class="btn btn-primary">S'Inscrire</button>
+
+</form>
+<p class="prop_conn">Déjà inscrit(e) ? <a href="/connexion"> Connectez-vous ! </a></p>
+</div>
 
 <%- include('footer'); -%>
     
