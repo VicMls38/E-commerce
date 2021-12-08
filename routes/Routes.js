@@ -10,6 +10,10 @@ const routeur = express.Router();
 
 routeur.get('/', Controller.Accueil);
 
+routeur.get('/inscription', Controller.Inscription);
+
+routeur.get('/connexion', Controller.Connexion);
+
 
 //Exportation du module routeur
 module.exports = routeur 

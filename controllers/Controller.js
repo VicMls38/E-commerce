@@ -16,4 +16,8 @@ module.exports = {
     Inscription : (req, res) => {
         res.render("./inscription");
     },
+
+    Connexion : (req, res) => {
+        res.render("./connexion");
+    },
 }
