@@ -26,4 +26,12 @@ module.exports = {
     Connexion : (req, res) => {
         res.render("./connexion");
     },
+
+    Login : (req, res) => {
+        let cli_mail = req.body.email;
+        let cli_mdp = req.body.mdp;
+
+        Model.Connexion(cli_mail, cli_mdp)
+        res.render("./accueil")
+    },
 }

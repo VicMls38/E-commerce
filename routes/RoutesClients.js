@@ -16,6 +16,7 @@ routeur.get('/inscription', Controller.Inscription);
 routeur.post('/register' ,urlencodedParser, Controller.Register);
 
 routeur.get('/connexion', Controller.Connexion);
+routeur.post('/login' ,urlencodedParser, Controller.Login);
 
 
 //Exportation du module routeur

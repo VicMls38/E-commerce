@@ -5,16 +5,16 @@
 
 <div class="card">
 
-<form >
+<form action="/login" method="post">
 
     <div class="mb-1">
       <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+      <input type="email" class="form-control" id="email" name="email"  aria-describedby="emailHelp">
     </div>
 
     <div class="mb-1">
       <label for="mdp" class="form-label">Password</label>
-      <input type="password" class="form-control" id="mdp">
+      <input type="password" class="form-control" id="mdp" name="mdp">
     </div>
 
     <button type="submit" class="btn btn-primary">Se connecter</button>
