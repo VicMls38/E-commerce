@@ -27,11 +27,19 @@ module.exports = {
         res.render("./connexion");
     },
 
+    // Fonction de connexion avec where //
     Login : (req, res) => {
         let cli_mail = req.body.email;
         let cli_mdp = req.body.mdp;
-
-        Model.Connexion(cli_mail, cli_mdp)
-        res.render("./accueil")
+        
+       Model.Connexion(function(lignes){
+            console.log(lignes);
+            if(lignes != 0){
+            res.render("./accueil", {index : lignes});
+            }else{
+                res.render("./connexion");
+            }
+        }, cli_mail, cli_mdp);
+        
     },
 }

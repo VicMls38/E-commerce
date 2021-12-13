@@ -17,13 +17,14 @@ module.exports={
 
     },
 
-    Connexion:function(cli_mail, cli_mdp){
-        
+    Connexion:function(callback, cli_mail, cli_mdp){
+
         var sql="SELECT Cli_Nom, Cli_Prenom, Cli_Mail, Cli_mdp FROM clients WHERE Cli_Mail = '"+cli_mail+"' AND Cli_Mdp = '"+cli_mdp+"'";
         db.query(sql, function (err, data, fields){
-            if (err) throw err;
-            console.log(data);
-            return data;
+            if (err){throw err};
+                console.log(data);
+                return callback(data);
+            
         });
 
     }
