@@ -1,7 +1,6 @@
 //Importation 
 const express = require('express');
 var bodyParser = require('body-parser')
-var app = express()
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 //Importation du fichier controller

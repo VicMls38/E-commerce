@@ -1,6 +1,7 @@
 
 //Importation du fichier models
 var Model = require('../models/ModelClients');
+const jwt = require("jsonwebtoken")
 
 
 module.exports = {  
@@ -31,13 +32,28 @@ module.exports = {
     Login : (req, res) => {
         let cli_mail = req.body.email;
         let cli_mdp = req.body.mdp;
+       
+        
         
        Model.Connexion(function(lignes){
             console.log(lignes);
             if(lignes != 0){
-            res.render("./accueil", {index : lignes});
-            }else{
+                console.log(cli_mail)
+
+                const token = jwt.sign(
+                    {Cli_Mail: cli_mail},
+                    process.env.TOKEN_SECRET,
+                    { expiresIn: '120s'}
+                )
+                // renvoie vers la page authSuccess et transmet  la "variable" access_token
+                res.cookie("access_token", token, {httpOnly: true, secure: true})
+                res.render('/accueil', {message: {type:"success", msg: "Authentification réussie ("+token+")"}})
+
+                res.render("./accueil", {index : lignes});
+            }
+            else{
                 res.render("./connexion");
+                
             }
         }, cli_mail, cli_mdp);
         

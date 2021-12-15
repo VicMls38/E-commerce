@@ -17,9 +17,17 @@
   },
   "homepage": "https://github.com/VicMls38/E-commerce#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
     "iniparser": "^1.0.5",
-    "mysql": "^2.18.1"
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
   }
 }

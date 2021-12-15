@@ -12,4 +12,8 @@ module.exports = {
             res.render("./accueil");
     },
 
+    Panier : (req, res) => {
+        res.render("./panier");
+    },
+
 }
