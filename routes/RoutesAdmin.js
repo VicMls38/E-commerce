@@ -9,9 +9,10 @@ const Controller = require('../controllers/ControllerAdmin');
 const routeur = express.Router();
 
 
-
-
 routeur.get('/paneladmin', Controller.Panel_Admin);
+
+routeur.get('/ajout_produit', Controller.Ajouter_produit);
+routeur.post('/add_product', urlencodedParser, Controller.Add_products);
 
 //Exportation du module routeur
 module.exports = routeur 

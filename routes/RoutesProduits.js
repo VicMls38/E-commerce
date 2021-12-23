@@ -2,14 +2,15 @@
 const express = require('express');
 
 //Importation du fichier controller
-const Controller = require('../controllers/Controller');
+const Controller = require('../controllers/ControllerProduits');
 
 //création du routeur Express pour ce module
 const routeur = express.Router();
 
 
-routeur.get('/', Controller.Accueil);
-routeur.get('/infos', Controller.Infos);
+routeur.get('/produits/', Controller.Page_Produits);
+
+
 
 
 

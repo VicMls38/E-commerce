@@ -14,6 +14,7 @@ const path = require('path')
 
 //Importation du fichier de routage
 const Routeur = require('./routes/Routes')
+const RouteurProduits = require('./routes/RoutesProduits');
 const RouteurClients = require('./routes/RoutesClients');
 const RouteurAdmin = require('./routes/RoutesAdmin');
 
@@ -26,6 +27,7 @@ app.set("views",path.resolve(__dirname,'views'))
 app.use(express.static('public'))
 
 app.use('/', Routeur);
+app.use('/produits/', RouteurProduits);
 app.use('/log/', RouteurClients);
 app.use('/admin/', RouteurAdmin);
 

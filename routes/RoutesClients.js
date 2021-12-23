@@ -9,7 +9,7 @@ const Controller = require('../controllers/ControllerClients');
 const routeur = express.Router();
 
 
-
+routeur.get('/panier', Controller.Panier)
 
 routeur.get('/inscription', Controller.Inscription);
 routeur.post('/register' ,urlencodedParser, Controller.Register);

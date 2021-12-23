@@ -6,9 +6,13 @@ const jwt = require("jsonwebtoken")
 
 module.exports = {  
 
+    Panier : (req, res) => {
+        res.render("./users/panier");
+    },
+
     // Redirection vers l'inscription
     Inscription : (req, res) => {
-        res.render("./inscription");
+        res.render("./users/inscription");
     },
 
     Register : (req, res) => {
@@ -21,11 +25,11 @@ module.exports = {
         let cli_ville = req.body.ville;
 
         Model.Inscription(cli_nom, cli_prenom, cli_mail, cli_mdp, cli_tel, cli_adresse, cli_ville)
-        res.render("./connexion")
+        res.render("./users/connexion")
     },
 
     Connexion : (req, res) => {
-        res.render("./connexion");
+        res.render("./users/connexion");
     },
 
     // Fonction de connexion avec where //
@@ -52,7 +56,7 @@ module.exports = {
                 res.render("./accueil", {index : lignes});
             }
             else{
-                res.render("./connexion");
+                res.render("./users/connexion");
                 
             }
         }, cli_mail, cli_mdp);

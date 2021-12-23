@@ -1,0 +1,55 @@
+<%- include('../header'); -%>
+<link rel="stylesheet" href="../css/authentification/inscription.css">
+
+<h1>Ajouter un produit</h1>
+
+<div class="card">
+
+<form action="/admin/add_product" method="post">
+
+    <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="nom" class="form-label">Nom</label>
+      </div>
+      <div class="col-auto">
+      <input type="text" class="form-control" id="nom" name="nom">
+      </div>
+
+    <div class="col-auto">
+      <label for="image" class="form-label">Image</label>
+        </div>
+      <div class="col-auto">
+      <input type="file" class="form-control" id="image" name="image">
+      </div>
+      </div>
+   
+    <div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label for="description" class="form-label">Description</label>
+        </div>
+        <div class="col-auto">
+        <input type="text" class="form-control" id="description" name="description">
+      </div>
+
+      <div class="col-auto">
+        <label for="categorie" class="form-label">Catégorie</label>
+        </div>
+        <div class="col-auto">
+        <input type="text" class="form-control" id="categorie" name="categorie">
+    </div>
+
+    <div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label for="prix" class="form-label">Prix</label>
+        </div>
+        <div class="col-auto">
+        <input type="int" class="form-control" id="prix" name="prix">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+
+</form>
+</div>
+
+<%- include('../footer'); -%>
+    
