@@ -1,11 +1,11 @@
 <%- include('header'); -%>
-<link rel="stylesheet" href="css/authentification/inscription.css">
+<link rel="stylesheet" href="../css/authentification/inscription.css">
 
 <h1>Inscription</h1>
 
 <div class="card">
 
-<form action="/register" method="post">
+<form action="/log/register" method="post">
 
     <div class="row g-3 align-items-center">
     <div class="col-auto">
@@ -80,7 +80,7 @@
     <button type="submit" class="btn btn-primary">S'Inscrire</button>
 
 </form>
-<p class="prop_conn">Déjà inscrit(e) ? <a href="/connexion"> Connectez-vous ! </a></p>
+<p class="prop_conn">Déjà inscrit(e) ? <a href="/log/connexion"> Connectez-vous ! </a></p>
 </div>
 
 <%- include('footer'); -%>
