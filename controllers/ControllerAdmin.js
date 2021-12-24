@@ -1,6 +1,7 @@
 
 //Importation du fichier models
 var Model = require('../models/ModelAdmin');
+var ModelProduits = require('../models/ModelProduits');
 const jwt = require("jsonwebtoken")
 
 
@@ -19,12 +20,20 @@ module.exports = {
 
         let nom = req.body.nom;
         let image = req.body.image;
+        console.log(image);
         let description = req.body.description;
         let categorie = req.body.categorie;
         let prix = req.body.prix;
 
         Model.Add_product(nom, image, description, categorie, prix)
-        res.render("./produits/produits")
+        ModelProduits.Affichage_produits(function(lignes){
+            //if(lignes != 0){
+            console.log(lignes);
+        res.render("./produits/produits", {index : lignes});
+           /* }else{
+                res.render("./produits/produits");
+            }*/
+        });
     },
     
 }

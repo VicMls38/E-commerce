@@ -1,7 +1,33 @@
 <%- include('../header'); -%>
 
-<p>Tous les produits</p>
+<link rel="stylesheet" href="../css/produits.css">
 
+
+    
+<div id="produits">
+    <h1>Tous les produits</h1>
+    <div class="container">
+        <div class="row row-cols-3">
+            <% index.forEach(function(user){ %>
+          <div class="col">
+            
+            <div class="card">
+                <img src="<%= user.Produit_Image%>">
+                <div class="card-body">
+                    <h5 class="card-title"><%= user.Produit_Nom%></h5>
+                    <p class="card-text"><%= user.Produit_Description%></p>
+                    <h6> <%= user.Produit_Prix%></h6>
+                    <a href="#" class="btn btn-primary">Acheter</a>
+                </div>
+            </div>           
+          
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    
+    
+</div>
 
 <%- include('../footer'); -%>
     

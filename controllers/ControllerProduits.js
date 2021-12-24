@@ -8,7 +8,14 @@ module.exports = {
 
     // Redirection vers l'inscription
     Page_Produits : (req, res) => {
-        res.render("./produits/produits");
+        Model.Affichage_produits(function(lignes){
+            //if(lignes != 0){
+            console.log(lignes);
+        res.render("./produits/produits", {index : lignes});
+           /* }else{
+                res.render("./produits/produits");
+            }*/
+        });
     },
 
     

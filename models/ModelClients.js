@@ -27,7 +27,7 @@ module.exports={
             
         });
 
-    }
+    },
 
 
     /* Exemple req sql 
