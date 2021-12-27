@@ -40,37 +40,44 @@ module.exports = {
         
         
        Model.Connexion(function(lignes){
-            console.log(lignes);
-            if(lignes != 0){
-                console.log(cli_mail)
-                ligne = JSON.stringify(lignes);
-                ligne = JSON.parse(ligne);
-            }
-                const user = {
-                    id: ligne[0].Cli_Id,
-                    nom: ligne[0].Cli_Nom,
-                    email: ligne[0].Cli_Mail,
-                    mdp: ligne[0].Cli_Mdp
-                }
-                console.log(user);
+        console.log(lignes);
+        if(lignes != 0){
+            console.log(cli_mail)
+            let ligne = JSON.stringify(lignes);
+            ligne = JSON.parse(ligne);
 
-                function generateAccessToken(user){
-                    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1800s'});
-                }
-    
-                if(cli_mail !== user.email){
-                    res.status(401).send('Invalid credentials');
-                }
-                if(cli_mdp !== user.mdp){
-                    res.status(401).send('Invalid credentials');
-                }
-    
-                const accessToken = generateAccessToken(user);
-                res.cookie("access_token",accessToken);
-                res.render("./accueil", {index : lignes});
-    
-    
-            }, cli_mail, cli_mdp);
+            const user = {
+                id: ligne[0].Cli_Id,
+                nom: ligne[0].Cli_Nom,
+                email: ligne[0].Cli_Mail,
+                mdp: ligne[0].Cli_Mdp
+            }
+            console.log("user : " + user);
+
+            function generateAccessToken(user){
+                return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1800s'});
+            }
+
+            if(cli_mail !== user.email){
+                //res.status(401).send('Invalid credentials');
+                res.render('./users/connexion')
+            }
+            if(cli_mdp !== user.mdp){
+                //res.status(401).send('Invalid credentials');
+                res.render('./users/connexion')
+            }
+
+            const accessToken = generateAccessToken(user);
+            res.cookie("access_token",accessToken);
+            res.render("./accueil", {index : user});
+        }
+        else{
+            res.render('./users/connexion')
+        }
+            
+
+
+        }, cli_mail, cli_mdp);
         
     },
 }
