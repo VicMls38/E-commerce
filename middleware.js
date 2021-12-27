@@ -23,7 +23,7 @@ module.exports = {
             return res.sendStatus(401);
         }
         req.user = user;
-        //console.log(req.user);
+        console.log(req.user.email);
         next();
     })
     }

@@ -2,6 +2,11 @@
 
 <p>Bienvenue !</p>
 
+<% if (typeof index != 'undefined'){ %>
+
+    <%= index.nom%>
+
+<% } %>
 
 <%- include('footer'); -%>
     

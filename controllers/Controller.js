@@ -9,7 +9,7 @@ module.exports = {
 
     // Redirection vers l'accueil
     Accueil : (req, res) => {
-            res.render("./accueil");
+        res.render("./accueil");  
     },
 
     Infos : (req, res) => {
