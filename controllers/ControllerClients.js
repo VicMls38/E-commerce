@@ -2,7 +2,6 @@
 //Importation du fichier models
 var Model = require('../models/ModelClients');
 const jwt = require("jsonwebtoken");
-const { clear } = require('console');
 
 
 module.exports = {  
@@ -92,7 +91,8 @@ module.exports = {
 
     Deconnexion : (req, res) =>{
         let token = jwt.decode(req.cookies.access_token);
-        clear.cookies;
+        res.clearCookie("access_token")
         res.render('./users/connexion', {token: token})
+        
     }
 }

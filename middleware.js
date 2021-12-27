@@ -14,7 +14,7 @@ module.exports = {
        
         //res.sendStatus(405);
         //res.send('https://127.0.0.1/log/connexion')
-        return res.render('./users/connexion');
+        return res.render('./users/connexion', {token: token});
     }
     console.log(process.env.ACCESS_TOKEN_SECRET)
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) =>{
