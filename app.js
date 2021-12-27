@@ -9,7 +9,6 @@ const cors = require('cors')            // Cross Origin Resource Sharing
 const morgan = require('morgan')        // logs pour authentification par token
 const dotenv = require('dotenv')        // gestion de fichier de configuration (environnement)
 const cookieParser = require("cookie-parser")
-const middlewares = require('./middlewares')
 const path = require('path')  
 
 //Importation du fichier de routage
@@ -21,23 +20,21 @@ const RouteurAdmin = require('./routes/RoutesAdmin');
 
 //Déclaration, paramètrage et utilisation de l'app
 let app = express()
+dotenv.config();
 app.set('view engine', 'ejs')
+app.use(cors())
+app.use(morgan('tiny'))
+app.use(cookieParser())
+
 app.use(express.static('views'))
 app.set("views",path.resolve(__dirname,'views'))
 app.use(express.static('public'))
+app.use(express.static(__dirname + '/img'));
 
 app.use('/', Routeur);
 app.use('/produits/', RouteurProduits);
 app.use('/log/', RouteurClients);
 app.use('/admin/', RouteurAdmin);
-
-
-
-app.use(express.static(__dirname + '/img'));
-
-app.use(cors())
-app.use(morgan('tiny'))
-app.use(cookieParser())
 
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies

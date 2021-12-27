@@ -43,23 +43,35 @@ module.exports = {
             console.log(lignes);
             if(lignes != 0){
                 console.log(cli_mail)
-
-                const token = jwt.sign(
-                    {Cli_Mail: cli_mail},
-                    process.env.TOKEN_SECRET,
-                    { expiresIn: '120s'}
-                )
-                // renvoie vers la page authSuccess et transmet  la "variable" access_token
-                res.cookie("access_token", token, {httpOnly: true, secure: true})
-                res.render('/accueil', {message: {type:"success", msg: "Authentification réussie ("+token+")"}})
-
-                res.render("./accueil", {index : lignes});
+                ligne = JSON.stringify(lignes);
+                ligne = JSON.parse(ligne);
             }
-            else{
-                res.render("./users/connexion");
-                
-            }
-        }, cli_mail, cli_mdp);
+                const user = {
+                    id: ligne[0].Cli_Id,
+                    nom: ligne[0].Cli_Nom,
+                    email: ligne[0].Cli_Mail,
+                    mdp: ligne[0].Cli_Mdp
+                }
+                console.log(user);
+
+                function generateAccessToken(user){
+                    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1800s'});
+                }
+    
+                if(cli_mail !== user.email){
+                    res.status(401).send('Invalid credentials');
+                }
+                if(cli_mdp !== user.mdp){
+                    res.status(401).send('Invalid credentials');
+                }
+    
+                const accessToken = generateAccessToken(user);
+                res.cookie("access_token",accessToken);
+                res.send(accessToken)
+                //res.render("./accueil", {index : lignes});
+    
+    
+            }, cli_mail, cli_mdp);
         
     },
 }
