@@ -67,8 +67,7 @@ module.exports = {
     
                 const accessToken = generateAccessToken(user);
                 res.cookie("access_token",accessToken);
-                res.send(accessToken)
-                //res.render("./accueil", {index : lignes});
+                res.render("./accueil", {index : lignes});
     
     
             }, cli_mail, cli_mdp);
