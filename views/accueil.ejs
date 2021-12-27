@@ -1,10 +1,8 @@
 <%- include('header'); -%>
 
-<p>Bienvenue !</p>
+<% if (index){ %>
 
-<% if (typeof index != 'undefined'){ %>
-
-    <%= index.nom%>
+    <p>Bienvenue <%= index.nom%>  !</p>
 
 <% } %>
 

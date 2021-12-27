@@ -1,33 +1,35 @@
 {
-  "name": "e-commerce",
-  "version": "1.0.0",
-  "description": "Projet site e-commerce",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VicMls38/E-commerce.git"
-  },
-  "author": "VicMls38",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/VicMls38/E-commerce/issues"
-  },
-  "homepage": "https://github.com/VicMls38/E-commerce#readme",
-  "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "fs": "^0.0.1-security",
-    "https": "^1.0.0",
-    "iniparser": "^1.0.5",
-    "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.10.0",
-    "mysql": "^2.18.1",
-    "path": "^0.12.7"
-  }
+    "name": "e-commerce",
+    "version": "1.0.0",
+    "description": "Projet site e-commerce",
+    "main": "app.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/VicMls38/E-commerce.git"
+    },
+    "author": "VicMls38",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/VicMls38/E-commerce/issues"
+    },
+    "homepage": "https://github.com/VicMls38/E-commerce#readme",
+    "dependencies": {
+      "cookie-parser": "^1.4.6",
+      "cors": "^2.8.5",
+      "dotenv": "^10.0.0",
+      "ejs": "^3.1.6",
+      "express": "^4.17.1",
+      "fs": "^0.0.1-security",
+      "https": "^1.0.0",
+      "iniparser": "^1.0.5",
+      "jsonwebtoken": "^8.5.1",
+      "jwt-decode": "^3.1.2",
+      "morgan": "^1.10.0",
+      "mysql": "^2.18.1",
+      "path": "^0.12.7"
+    }
 }
+  

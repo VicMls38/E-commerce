@@ -26,6 +26,6 @@ module.exports = {
         console.log(req.user.email);
         next();
     })
-    }
+    },
 
 }

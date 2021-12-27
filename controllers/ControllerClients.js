@@ -56,6 +56,7 @@ module.exports = {
 
             function generateAccessToken(user){
                 return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1800s'});
+                
             }
 
             if(cli_mail !== user.email){
@@ -68,8 +69,10 @@ module.exports = {
             }
 
             const accessToken = generateAccessToken(user);
-            res.cookie("access_token",accessToken);
-            res.render("./accueil", {index : user});
+            res.cookie("access_token",accessToken)
+            var decoded = jwt.decode(accessToken);
+            console.log(decoded);
+            res.render("./accueil", {index: decoded});
         }
         else{
             res.render('./users/connexion')
