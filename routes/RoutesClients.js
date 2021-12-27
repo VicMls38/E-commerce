@@ -18,6 +18,8 @@ routeur.post('/register' ,urlencodedParser, Controller.Register);
 routeur.get('/connexion', Controller.Connexion);
 routeur.post('/login' ,urlencodedParser, Controller.Login);
 
+routeur.get('/deconnexion', Controller.Deconnexion)
+
 
 //Exportation du module routeur
 module.exports = routeur 

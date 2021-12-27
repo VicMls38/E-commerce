@@ -9,14 +9,17 @@ module.exports = {
 
     // Redirection vers l'inscription
     Panel_Admin : (req, res) => {
-        res.render("./admin/panelAdmin");
+        let token = jwt.decode(req.cookies.access_token);
+        res.render("./admin/panelAdmin", {token: token});
     },
 
     Ajouter_produit : (req, res) => {
-        res.render("./admin/ajout_produit");
+        let token = jwt.decode(req.cookies.access_token);
+        res.render("./admin/ajout_produit", {token: token});
     },
 
     Add_products : (req, res) => {
+        let token = jwt.decode(req.cookies.access_token);
 
         let nom = req.body.nom;
         let image = req.body.image;
@@ -29,7 +32,7 @@ module.exports = {
         ModelProduits.Affichage_produits(function(lignes){
             //if(lignes != 0){
             console.log(lignes);
-        res.render("./produits/produits", {index : lignes});
+        res.render("./produits/produits", {index : lignes, token: token});
            /* }else{
                 res.render("./produits/produits");
             }*/

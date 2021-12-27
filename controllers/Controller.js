@@ -12,12 +12,12 @@ module.exports = {
     // Redirection vers l'accueil
     Accueil : (req, res) => {
         let token = jwt.decode(req.cookies.access_token);
-        console.log(token)
-        res.render("./accueil", {index: token});  
+        res.render("./accueil", {token: token});  
     },
 
     Infos : (req, res) => {
-        res.render("./infos");
+        let token = jwt.decode(req.cookies.access_token);
+        res.render("./infos", {token: token});
 },
 
 }
